@@ -36,7 +36,7 @@ export class Preloader extends BaseScene
         // Original assets
         this.load.image('logo', 'logo.png');
         this.load.image('background', 'background.png');
-        
+
         // Load new start game screens
         this.load.image('start-game-1', 'start-game/start-game-1.png');
         this.load.image('start-game-2', 'start-game/start-game-2.png');
@@ -44,7 +44,7 @@ export class Preloader extends BaseScene
         this.load.image('start-game-4', 'start-game/start-game-4.png');
         this.load.image('start-game-5', 'start-game/start-game-5.png');
         this.load.image('start-game-button', 'start-game/start-game-button.png');
-        
+
         // Font preloading
         // WebFont.load is not built into Phaser, but we can make sure our custom font is loaded
         // through the CSS and check it here
@@ -55,10 +55,10 @@ export class Preloader extends BaseScene
                 console.warn('PressStart2P font not detected, game text may use fallback fonts');
             }
         };
-        
+
         // Check font after a brief delay to allow for CSS loading
         this.time.delayedCall(500, fontLoadedCheck);
-        
+
         // Office Escape game assets
         this.load.image('office_bg', 'office_background.png');
         this.load.image('computer', 'computer.png');
@@ -70,30 +70,31 @@ export class Preloader extends BaseScene
         this.load.image('fish', 'fish.png');
         this.load.image('goji_berries', 'goji_berries.png');
         this.load.image('skytrain_bg', 'skytrain_background.png');
-        
+
         // Energy level icons
         this.load.image('energy-empty', 'energy-bar/energy-empty.png');
         this.load.image('energy-low', 'energy-bar/energy-low.png');
         this.load.image('energy-medium', 'energy-bar/energy-medium.png');
         this.load.image('energy-high', 'energy-bar/energy-high.png');
-        
+
         // Animation spritesheets
-        this.load.spritesheet('fish_animation', 'fish_animation.png', { 
-            frameWidth: 64, 
-            frameHeight: 32 
+        this.load.spritesheet('fish_animation', 'fish_animation.png', {
+            frameWidth: 64,
+            frameHeight: 32
         });
-        
+
         // Sound effects
-        this.load.audio('click', 'click.mp3');
-        this.load.audio('type', 'typing.mp3');
-        this.load.audio('ambient_office', 'ambient_office.mp3');
+        this.load.audio('bgm1', 'sound/bgm1.mp3')
+        this.load.audio('type', 'sound/typing.mp3');
+        this.load.audio('click', 'sound/mouse_click.mp3')
+        this.load.audio('button_select', 'sound/button-select.mp3');
     }
 
     create ()
     {
         // Call parent create method to set up defaults including font override
         super.create();
-        
+
         //  When all the assets have loaded, it's often worth creating global objects here that the rest of the game can use.
         //  For example, you can define global animations here, so we can use them in other scenes.
 
